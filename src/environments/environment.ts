@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false, 
+  //apiUrl: finalproject20220629195153.azurewebsites.net/api/ => when we are ready to implement
   apiUrl: "https://localhost:7259/api/"
 };
 
