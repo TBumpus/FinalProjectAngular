@@ -26,12 +26,17 @@ export class LocalAPIService {
   }
 
   //Get movie list by category
-  GetMoviesByCategoryFromUserList () : Observable<Movie[]>{
+  GetMoviesByCategoryFromUserList (category:number) : Observable<Movie[]>{
     let categoryList = this.client.get<Movie[]>(environment.apiUrl + "Movies/GetMoviesByCategoryFromUserList");
 
     return categoryList;
   }
 
+  //Get random movie from category
+  GetRandomMovieByCategoryFromUserList (category:number){
+    let randomMovieByCategory = this.client.get<Movie>(environment.apiUrl + "Movies/GetRandomMovieByCategoryFromUserList");
 
+    return randomMovieByCategory;
+  }
 
 }
