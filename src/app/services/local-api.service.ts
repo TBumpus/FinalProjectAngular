@@ -17,4 +17,13 @@ export class LocalAPIService {
 
     return movieList;
   }
+
+  //Get random movie for user
+  GetRandomMovieFromUserList(){
+    let randomMovie = this.client.get<Movie>(environment.apiUrl + "Movies/GetRandomMovieFromUserList");
+
+    return randomMovie;
+  }
+
+
 }
