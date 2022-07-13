@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '@auth0/auth0-angular';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Movie } from '../interfaces/movie';
@@ -39,4 +40,32 @@ export class LocalAPIService {
     return randomMovieByCategory;
   }
 
+
+  //Delete movie from movie list 
+  DeleteMovieFromUserList(movie: Movie){
+    let userDeleteMovie = this.client.delete<Movie>(environment.apiUrl + "Movies/DeleteMovieFromUserList"); 
+    
+    return userDeleteMovie; 
+  }
+
+  //Add movie to user list 
+  AddMovieToUserList(movie: Movie){
+    let userAddMovie = this.client.post<Movie>(environment.apiUrl + "Movies/AddMovieToUserList", movie);
+
+    return userAddMovie; 
+  }
+
+  //Get users name 
+  GetUsername(user: string){
+    let userName = this.client.get<User>(environment.apiUrl + "Movies/GetUsername" + user); 
+
+    return userName;
+  }
+
+  //Add new user 
+  AddNewUser(user: User){
+    let newUser = this.client.post<User>(environment.apiUrl + "Movies/AddNewUser", user); 
+
+    return newUser; 
+  }
 }
