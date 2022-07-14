@@ -1,1 +1,19 @@
-<p>user-movie-list works!</p>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-3" *ngFor="let userMovie of userMovieList ">
+                <div class="card" style="width: 18rem;">
+                    <!--<img src="/assets/{{pet.imageName}}" style="height: 300px" class="card-img-top" alt="...">-->
+                    <div class="card-body">
+                      <h5 class="card-title">{{userMovie.title}}</h5>
+                      <p class="card-text">{{userMovie.imdbId}}</p>
+                      <!-- routes to pet details and passes petId-->
+                      <!--<a [routerLink]="['/petDetails', pet.petId]" class="btn btn-primary">Details</a> -->
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>   
+    <div class="col-2"></div>
+</div>
