@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
 import { AssignUpdateCategoryComponent } from './Components/assign-update-category/assign-update-category.component';
@@ -24,6 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule], 
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppRoutingModule { }
