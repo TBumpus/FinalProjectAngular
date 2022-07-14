@@ -11,9 +11,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { MainComponent } from './Components/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SearchMovieComponent } from './Components/search-movie/search-movie.component';
+import { UserMovieListComponent } from './Components/user-movie-list/user-movie-list.component';
+import { UserMoviesByCategoryComponent } from './Components/user-movies-by-category/user-movies-by-category.component';
+import { RandomMovieFromUserListByCategoryComponent } from './Components/random-movie-from-user-list-by-category/random-movie-from-user-list-by-category.component';
+import { AssignUpdateCategoryComponent } from './Components/assign-update-category/assign-update-category.component';
+import { RandomMovieFromUserListComponent } from './Components/random-movie-from-user-list/random-movie-from-user-list.component';
+import { SearchMovieResultComponent } from './Components/search-movie-result/search-movie-result.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent, MainComponent],
+  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent, MainComponent, SearchMovieComponent, UserMovieListComponent, UserMoviesByCategoryComponent, RandomMovieFromUserListByCategoryComponent, AssignUpdateCategoryComponent, RandomMovieFromUserListComponent, SearchMovieResultComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
