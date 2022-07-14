@@ -9,12 +9,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component'
 ;
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
+import { MainComponent } from './Components/main/main.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent],
+  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent, MainComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
     AuthModule.forRoot({
       // The domain and clientId were configured in the previous chapter
       domain: 'dev-4wz8qq0v.us.auth0.com',
