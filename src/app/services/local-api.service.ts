@@ -68,4 +68,11 @@ export class LocalAPIService {
 
     return newUser; 
   }
+
+  //Update the users category on a movie
+  UpdateCategory(movie:Movie){
+    let updatedCategory = this.client.put<Movie>(environment.apiUrl + "Movies/UpdateCategory", movie);
+
+    return updatedCategory;
+  }
 }
