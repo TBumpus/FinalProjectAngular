@@ -1,1 +1,9 @@
-<p>search-movie works!</p>
+<div class="container-fluid"> 
+    <form #searchThirdPartyForm="ngForm"(ngSubmit)="submitForm(searchThirdPartyForm.form)">
+        <div class="form-group">
+            <label for="movieSearch">Search a Movie Title</label>
+            <input type="text" class="form-control" id="searchTerm" name="movieSearch" ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary">Search!</button>
+    </form>
+</div>
