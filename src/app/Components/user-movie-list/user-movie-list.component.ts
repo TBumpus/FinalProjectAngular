@@ -13,6 +13,7 @@ export class UserMovieListComponent implements OnInit {
 
   userMovieList: Movie[] = [];
 
+  movie: Movie | undefined; 
 
   ngOnInit(): void {
     this.GetAllMoviesFromUserList();
@@ -21,4 +22,13 @@ export class UserMovieListComponent implements OnInit {
   GetAllMoviesFromUserList(){
     this.service.GetAllMoviesFromUserList().subscribe((data:Movie[]) => this.userMovieList = data);
   }
+
+
+  UpdateCategory(movie: Movie){
+    this.service.UpdateCategory(movie).subscribe((data:Movie) => this.movie = data);
+  }
+
+
+
+
 }
