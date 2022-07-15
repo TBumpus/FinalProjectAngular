@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThirdPartyApiService } from 'src/app/services/third-party-api.service';
 
 @Component({
   selector: 'app-search-movie',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchMovieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:ThirdPartyApiService) { }
 
   ngOnInit(): void {
+  }
+
+  submitForm(form:any) {
+    this.service.SearchThirdParty(form.value["searchTerm"])
   }
 
 }
