@@ -2,8 +2,25 @@
     <form #searchThirdPartyForm="ngForm"(ngSubmit)="submitForm(searchThirdPartyForm.form)">
         <div class="form-group">
             <label for="movieSearch">Search a Movie Title</label>
-            <input type="text" class="form-control" id="searchTerm" name="movieSearch" ngModel>
+            <input type="text" class="form-control" name="movieSearch" ngModel>
         </div>
         <button type="submit" class="btn btn-primary">Search!</button>
     </form>
+</div>
+<div *ngIf="movieAPI !== undefined">
+    <div class = "container-fluid">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of movieAPI.results">
+            <td>{{result.title}}</td>
+            <!-- <td><a [routerLink]= "['/ticketDetails', ticket.ticketId]" class="btn btn-primary">Details</a></td> -->
+            </tr>
+        </tbody>
+      </table>
+    </div>
 </div>
