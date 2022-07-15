@@ -19,9 +19,12 @@ import { AssignUpdateCategoryComponent } from './Components/assign-update-catego
 import { RandomMovieFromUserListComponent } from './Components/random-movie-from-user-list/random-movie-from-user-list.component';
 import { SearchMovieResultComponent } from './Components/search-movie-result/search-movie-result.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
-  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent, MainComponent, SearchMovieComponent, UserMovieListComponent, UserMoviesByCategoryComponent, RandomMovieFromUserListByCategoryComponent, AssignUpdateCategoryComponent, RandomMovieFromUserListComponent, SearchMovieResultComponent],
+  declarations: [AppComponent, AuthButtonComponent, UserProfileComponent, MainComponent, SearchMovieComponent, UserMovieListComponent, UserMoviesByCategoryComponent, RandomMovieFromUserListByCategoryComponent, AssignUpdateCategoryComponent, RandomMovieFromUserListComponent, SearchMovieResultComponent, NavbarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
