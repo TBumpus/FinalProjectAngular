@@ -28,6 +28,10 @@ export class UserMovieListComponent implements OnInit {
     this.service.UpdateCategory(movie).subscribe((data:Movie) => this.movie = data);
   }
 
+  DeleteMovieFromUserList(movie: Movie){
+    this.service.DeleteMovieFromUserList(movie).subscribe((data:Movie) => this.movie = data);
+  }
+
 
 
 
