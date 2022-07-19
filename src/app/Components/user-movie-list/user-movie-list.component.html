@@ -6,8 +6,16 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                         <h5 class="card-title">{{userMovie.title}}</h5>
-                        <p class="card-text">{{userMovie.imdbId}}</p>
-                        <button type="button" class="btn btn-primary" (click)="UpdateCategory(userMovie)">Update Category</button>
+                        <p class="card-text">{{category[userMovie.category]}}</p>
+                        <!--                       <select ...>
+                            <option *ngFor="let fileType of fileTypes"
+                                    [value]="fileType">
+                              {{FileType2LabelMapping[fileType]}}
+                            </option>
+                          </select>
+    -->
+ 
+                        <button type="button" class="btn btn-primary" (click)="UpdateCategory(userMovie.id, category.Drama)">Update Category</button>
                         <button type="button" class="btn btn-primary" (click)="DeleteMovieFromUserList(userMovie.id)">Remove Movie</button>                    
                         </div>
                     </div>
