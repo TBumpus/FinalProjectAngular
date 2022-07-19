@@ -1,8 +1,8 @@
 export enum MovieCategory {
     Horror, 
-    Action, 
+    Action,
     Drama, 
     Comedy, 
-    SciFi, 
-    Western 
+    SciFi,
+    Western
 }

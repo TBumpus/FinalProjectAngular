@@ -4,6 +4,7 @@ import { User } from '@auth0/auth0-angular';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Movie } from '../interfaces/movie';
+import { MovieCategory } from '../interfaces/moviecategory';
 
 @Injectable({
   providedIn: 'root'
@@ -71,8 +72,8 @@ export class LocalAPIService {
   }
 
   //Update the users category on a movie
-  UpdateCategory(movie:Movie){
-    let updatedCategory = this.client.put<Movie>(environment.apiUrl + "Movies/UpdateCategory", movie);
+  UpdateCategory(id:number, category:MovieCategory){
+    let updatedCategory = this.client.put<Movie>(environment.apiUrl + "Movies/UpdateCategory?id=" + id + "&category=" + category, null);
 
     return updatedCategory;
   }

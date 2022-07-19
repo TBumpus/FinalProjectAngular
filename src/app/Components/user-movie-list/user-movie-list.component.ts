@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movie';
+import { MovieCategory } from 'src/app/interfaces/moviecategory';
 import { LocalAPIService } from 'src/app/services/local-api.service';
 
 @Component({
@@ -14,6 +15,8 @@ export class UserMovieListComponent implements OnInit {
   userMovieList: Movie[] = [];
 
   movie: Movie | undefined; 
+  
+  category = MovieCategory;
 
   ngOnInit(): void {
     this.GetAllMoviesFromUserList();
@@ -24,8 +27,8 @@ export class UserMovieListComponent implements OnInit {
   }
 
 
-  UpdateCategory(movie: Movie){
-    this.service.UpdateCategory(movie).subscribe((data:Movie) => this.movie = data);
+  UpdateCategory(id: number, category: MovieCategory){
+    this.service.UpdateCategory(id, category).subscribe((data:Movie) => this.movie = data);
   }
 
   DeleteMovieFromUserList(id:number){
