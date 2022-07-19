@@ -8,7 +8,7 @@
                         <h5 class="card-title">{{userMovie.title}}</h5>
                         <p class="card-text">{{userMovie.imdbId}}</p>
                         <button type="button" class="btn btn-primary" (click)="UpdateCategory(userMovie)">Update Category</button>
-                        <button type="button" class="btn btn-primary" (click)="DeleteMovieFromUserList(userMovie)">Remove Movie</button>                    
+                        <button type="button" class="btn btn-primary" (click)="DeleteMovieFromUserList(userMovie.id)">Remove Movie</button>                    
                         </div>
                     </div>
                 </div>

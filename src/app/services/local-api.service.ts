@@ -42,8 +42,8 @@ export class LocalAPIService {
 
 
   //Delete movie from movie list 
-  DeleteMovieFromUserList(movie: Movie){
-    let userDeleteMovie = this.client.delete<Movie>(environment.apiUrl + "Movies/DeleteMovieFromUserList"); 
+  DeleteMovieFromUserList(id:number){
+    let userDeleteMovie = this.client.delete<Movie>(environment.apiUrl + "Movies/DeleteMovieFromUserList?id=" + id); 
     
     return userDeleteMovie; 
   }
