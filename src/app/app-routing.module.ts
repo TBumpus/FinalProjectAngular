@@ -16,7 +16,7 @@ const routes: Routes = [
   { path:"assignUpdateCategory", component:AssignUpdateCategoryComponent},
   { path:"randomMovieFromUserList", component:RandomMovieFromUserListComponent},
   { path:"randomMovieFromUserListByCategory", component:RandomMovieFromUserListByCategoryComponent},
-  { path:"searchMovie", component:SearchMovieComponent},
+  { path:"searchMovie", component:SearchMovieComponent, canActivate:[AuthGuard]},
   { path:"searchMovieResult", component:SearchMovieResultComponent},
   { path:"userMovieList", component:UserMovieListComponent, canActivate:[AuthGuard]},
   { path:"userMoviesByCategory", component:UserMoviesByCategoryComponent}

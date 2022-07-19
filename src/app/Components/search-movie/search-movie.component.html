@@ -18,7 +18,7 @@
         <tbody>
             <tr *ngFor="let result of movieAPI.results">
             <td>{{result.title}}</td>
-            <!-- <td><a [routerLink]= "['/ticketDetails', ticket.ticketId]" class="btn btn-primary">Details</a></td> -->
+            <button (click)="AddMovieToUserList(result)">Add Movie</button>
             </tr>
         </tbody>
       </table>
