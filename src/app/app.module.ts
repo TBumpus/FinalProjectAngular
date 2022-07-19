@@ -53,6 +53,16 @@ import { RouterModule } from '@angular/router';
               audience: 'https://final-project-api',
 
             }
+          },
+          {
+
+            //might have to change this around for working locally
+            uri: 'https://localhost:7259/api/*',
+            tokenOptions: {
+              // The attached token should target this audience
+              audience: 'https://final-project-api',
+
+            }
           }
         ]
       }

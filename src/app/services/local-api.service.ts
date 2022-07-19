@@ -49,9 +49,10 @@ export class LocalAPIService {
   }
 
   //Add movie to user list 
-  AddMovieToUserList(movie: Movie){
+  AddMovieToUserList(movie: Movie) : Observable<Movie>{
     let userAddMovie = this.client.post<Movie>(environment.apiUrl + "Movies/AddMovieToUserList", movie);
 
+    console.log("hello");
     return userAddMovie; 
   }
 
