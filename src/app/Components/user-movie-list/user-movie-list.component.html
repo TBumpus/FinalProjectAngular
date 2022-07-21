@@ -13,8 +13,8 @@
                             Update Category
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">                                   
-                                    <li *ngFor="let userCategory of category | keyvalue">
-                                    <a class="dropdown-item" (click)="UpdateCategory(userMovie.id, userCategory.value)">{{userCategory.value}}</a></li>
+                                    <li *ngFor="let userCategory of keys()">
+                                    <a class="dropdown-item" (click)="UpdateCategory(userMovie.id, userCategory)">{{userCategory}}</a></li>
                             </ul>
                             </div>
 
