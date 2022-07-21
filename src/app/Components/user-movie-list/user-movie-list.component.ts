@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieCategory } from 'src/app/interfaces/moviecategory';
 import { LocalAPIService } from 'src/app/services/local-api.service';
@@ -18,6 +19,13 @@ export class UserMovieListComponent implements OnInit {
   
   category = MovieCategory;
 
+  role = MovieCategory;
+
+  keys() : Array<string>{
+    var keys = Object.keys(this.role);
+    return keys.slice(keys.length / 2);
+  }
+
   ngOnInit(): void {
     this.GetAllMoviesFromUserList();
   }
@@ -27,8 +35,12 @@ export class UserMovieListComponent implements OnInit {
   }
 
 
-  UpdateCategory(id: number, category: MovieCategory){
-    this.service.UpdateCategory(id, category).subscribe((data:Movie) => this.movie = data);
+
+  UpdateCategory(id: number, category: string){
+
+    var test:MovieCategory = category as unknown as MovieCategory;
+    this.service.UpdateCategory(id, test).subscribe((data:Movie) => this.movie = data);
+    location.reload();
   }
 
   DeleteMovieFromUserList(id:number){
