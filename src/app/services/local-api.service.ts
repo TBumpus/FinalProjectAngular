@@ -77,4 +77,10 @@ export class LocalAPIService {
 
     return updatedCategory;
   }
+
+  //Check For UserName 
+  CheckForUserName(id: string){
+    let userNameExists = this.client.get<User>(environment.apiUrl + "Movies/CheckForUserName?id=" + id); 
+    return userNameExists; 
+  }
 }
