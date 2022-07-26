@@ -1,13 +1,22 @@
-<div class="row">
-    <div class="col-12">
-        <div class="text-center">
-            <h1>MOVIE MENTION CINEMA</h1>
+
+
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <!-- if you are logged and have a username -->
+    <div *ngIf="userExists; else elseBlock">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1>MOVIE MENTION CINEMA</h1>
+                </div>
+            </div>
         </div>
+        
+        <a [routerLink]="['/userMovieList']" class="btn btn-primary">YOUR MOVIES</a>
+        <a [routerLink]="['/searchMovie']" class="btn btn-primary">SEARCH MOVIES</a>
     </div>
-</div>
+    <ng-template #elseBlock><p>please create user</p></ng-template>  
+  </ng-container>
 
-<a [routerLink]="['/userMovieList']" class="btn btn-primary">YOUR MOVIES</a>
-<a [routerLink]="['/searchMovie']" class="btn btn-primary">SEARCH MOVIES</a>
-
-<div *ngIf="CheckForUserName() === true; else elseBlock">Content to render when condition is true.</div>
-<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+  <ng-template #loggedOut>
+    <p>Please click log in button to sign up!</p>
+  </ng-template>
