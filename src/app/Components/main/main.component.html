@@ -1,15 +1,24 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="text-center">
-                <p>MOVIE MENTION</p>  
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <!-- if you are logged and have a username -->
+    <div *ngIf="userExists; else elseBlock">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1>MOVIE MENTION CINEMA</h1>
+                </div>
             </div>
         </div>
+        <div class="frontbuttons">
+            <a [routerLink]="['/userMovieList']" class="frontpagebutton1"><span>YOUR MOVIES</span></a>
+            <a [routerLink]="['/searchMovie']" class="frontpagebutton2"><span>SEARCH MOVIES</span></a>
+        </div>
+        
     </div>
-    <div class="frontbuttons">
-        <a [routerLink]="['/userMovieList']" class="frontpagebutton1"><span>YOUR MOVIES</span></a>
-        <a [routerLink]="['/searchMovie']" class="frontpagebutton2"><span>SEARCH MOVIES</span></a>
-    </div>
+    <ng-template #elseBlock><p>please create user</p></ng-template>  
+  </ng-container>
+
+  <ng-template #loggedOut>
+    <p>Please click log in button to sign up!</p>
+  </ng-template>
 </div>
-
-

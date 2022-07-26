@@ -77,4 +77,10 @@ export class LocalAPIService {
 
     return updatedCategory;
   }
+
+  //Check For UserName 
+  CheckForUserName() : Observable<boolean>{
+    let userNameExists = this.client.get<boolean>(environment.apiUrl + "Movies/CheckForUserName"); 
+    return userNameExists; 
+  }
 }
