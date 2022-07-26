@@ -79,8 +79,8 @@ export class LocalAPIService {
   }
 
   //Check For UserName 
-  CheckForUserName(id: string){
-    let userNameExists = this.client.get<User>(environment.apiUrl + "Movies/CheckForUserName?id=" + id); 
+  CheckForUserName() : Observable<boolean>{
+    let userNameExists = this.client.get<boolean>(environment.apiUrl + "Movies/CheckForUserName"); 
     return userNameExists; 
   }
 }
