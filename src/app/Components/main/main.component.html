@@ -1,5 +1,3 @@
-
-
 <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
     <!-- if you are logged and have a username -->
     <div *ngIf="userExists; else elseBlock">
