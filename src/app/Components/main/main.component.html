@@ -8,3 +8,6 @@
 
 <a [routerLink]="['/userMovieList']" class="btn btn-primary">YOUR MOVIES</a>
 <a [routerLink]="['/searchMovie']" class="btn btn-primary">SEARCH MOVIES</a>
+
+<div *ngIf="CheckForUserName() === true; else elseBlock">Content to render when condition is true.</div>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
