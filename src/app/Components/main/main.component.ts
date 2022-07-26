@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '@auth0/auth0-angular';
+import { LocalAPIService } from 'src/app/services/local-api.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:LocalAPIService) { }
+
+  userName: User | undefined;
+
+  userExists:boolean | undefined;
 
   ngOnInit(): void {
+  }
+
+  CheckForUserName(){
+    this.service.CheckForUserName().subscribe((data:User) => this.userName = data);
   }
 
 }
