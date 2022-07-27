@@ -16,7 +16,8 @@ export class MainComponent implements OnInit {
   userExists:boolean = false;
 
   ngOnInit(): void {
-    this.CheckForUserName();
+    //this.CheckForUserName();
+    this.userExists=true;
   }
 
   CheckForUserName(){
