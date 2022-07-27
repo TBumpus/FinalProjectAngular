@@ -19,13 +19,13 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Title</th>
+            <th id="titles" scope="col">Title</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let result of movieAPI.results">
-            <td>{{result.title}}</td>
-            <button (click)="AddMovieToUserList(result)">Add Movie</button>
+            <td class="movies">{{result.title}}</td>
+            <button class="addmovie" (click)="AddMovieToUserList(result)">Add Movie</button>
             </tr>
         </tbody>
       </table>

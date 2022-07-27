@@ -5,15 +5,25 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center">
-                    <h1>MOVIE MENTION CINEMA</h1>
+                    <h1>MOVIE MENTION</h1>
                 </div>
             </div>
         </div>
-        <div class="frontbuttons">
-            <a [routerLink]="['/userMovieList']" class="frontpagebutton1"><span>YOUR MOVIES</span></a>
-            <a [routerLink]="['/searchMovie']" class="frontpagebutton2"><span>SEARCH MOVIES</span></a>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6">
+                        <button [routerLink]="['/userMovieList']" class="frontpagebutton1"><span>YOUR MOVIES</span></button>
+                    </div>
+                    <div class="col-6">
+                        <button [routerLink]="['/searchMovie']" class="frontpagebutton2"><span>SEARCH MOVIES</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+
         </div>
-        
     </div>
     <ng-template #elseBlock><p>please create user</p></ng-template>  
   </ng-container>

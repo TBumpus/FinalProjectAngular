@@ -7,9 +7,16 @@
     background-size: cover;
 }
 
+.addmovie{
+  color: rgb(231, 231, 0);
+  font-weight: bold;
+}
+#titles{
+  color: rgb(231, 231, 0);
+}
+
 .results{
   background-color: black;
-  color: rgb(231, 231, 0);
 }
 
 .text-center{
