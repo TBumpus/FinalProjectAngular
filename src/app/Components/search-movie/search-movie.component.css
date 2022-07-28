@@ -83,3 +83,8 @@
       opacity: 1;
       right: 0;
     }
+
+    td.movies{
+      color: rgb(248, 79, 107);
+      font-weight: bold;
+    }
