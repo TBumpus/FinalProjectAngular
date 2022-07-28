@@ -25,7 +25,15 @@
 
         </div>
     </div>
-    <ng-template #elseBlock><p>please create user</p></ng-template>  
+    <ng-template #elseBlock>
+        <form #CreateNewUser="ngForm"(ngSubmit)="AddNewUser(CreateNewUser.form)">
+        <div class="form-group">
+            <label class="CreateUser" for="userCreation">Please Create a new user account.</label>
+            <input type="text" class="form-control" name="userCreation" ngModel>
+        </div>
+        <button type="submit" class="searchbutton">Submit!</button>
+        </form>
+    </ng-template>  
   </ng-container>
 
   <ng-template #loggedOut>
