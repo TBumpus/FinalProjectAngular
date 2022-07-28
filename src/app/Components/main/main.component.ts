@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
 
   constructor(private service:LocalAPIService, public auth: AuthService) { }
 
+  newUser: User | undefined;
   userName: User | undefined;
 
   userExists:boolean = false;
@@ -23,4 +24,9 @@ export class MainComponent implements OnInit {
     this.service.CheckForUserName().subscribe((data:boolean) => this.userExists = data);
   }
 
+  AddNewUser(form:any){
+
+    this.service.AddNewUser({id:0, authId:"", userName:form.value["userCreation"]}).subscribe((data:User) => {this.newUser = data; window.location.reload()});
+    
+  }
 }
